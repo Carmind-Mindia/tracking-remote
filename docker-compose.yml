@@ -1,0 +1,17 @@
+version: '3'
+services:
+    tracking-remote:
+      image: fonzeca/tracking-remote:dev
+      ports:
+        - 2001:2001
+        - 2011:2011
+      networks:
+        - carmind
+      env_file:
+        - .env
+
+networks:
+  carmind:
+    driver: bridge
+    name: carmind
+    external: true
