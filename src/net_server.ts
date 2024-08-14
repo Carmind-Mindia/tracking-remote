@@ -32,7 +32,8 @@ const server = net.createServer((socket) => {
                 case "location":
                     console.log("receive location message,imei:" + message.imei + "," + moment(message.date._d).format("YYYY-MM-DD HH:mm:ss"));
                     console.log("latitude:" + message.latitude + ",longitude:" + message.longitude + ",samplingIntervalAccOn:" + message.samplingIntervalAccOn + 
-                    ",samplingIntervalAccOff:" + message.samplingIntervalAccOff + ",iopACOn:" + message.iopACOn + ",isAlarmData:" + message.isAlarmData
+                    ",samplingIntervalAccOff:" + message.samplingIntervalAccOff + ",iopACOn:" + message.iopACOn + ",isAlarmData:" + message.isAlarmData +
+                    ",originalAlarmCode:" + message.originalAlarmCode
                     );
                     
                     var resp: any = {};
