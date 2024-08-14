@@ -29,10 +29,6 @@ io.on('connection', (socket: Socket) => {
 
     socket.on('list', () => {
         const clients = ClientsController.getInstance().getClients();
-        clients.set('test', {} as any);
-        clients.set('test1', {} as any);
-        clients.set('test2', {} as any);
-        clients.set('test3', {} as any);
         var result = [];
         for (var key of clients.keys()) {
             result.push(key);

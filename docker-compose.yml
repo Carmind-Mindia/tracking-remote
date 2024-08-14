@@ -9,6 +9,8 @@ services:
         - carmind
       env_file:
         - .env
+      ## Always on
+      restart: always
 
 networks:
   carmind:

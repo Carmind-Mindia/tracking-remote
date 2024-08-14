@@ -47,7 +47,11 @@ export class ClientsController {
     public removeByAddress(address?: string) {
         this.clients.forEach((value, key) => {
             if (value.destroyed || value.remoteAddress === address) {
-                value.destroy();
+                try {
+                    value.destroy();
+                } catch (e) {
+                    console.error("Error when destroy socket:" + e);
+                }
                 this.clients.delete(key);
             }
         });
