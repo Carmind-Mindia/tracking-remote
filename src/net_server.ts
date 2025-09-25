@@ -46,6 +46,8 @@ const server = net.createServer((socket) => {
                     break;
                 case "config":
                     console.log("receive config message,imei:" + message.imei + ",config content:" + message.content);
+                    // Notificar a los clientes Socket.IO sobre el comando config recibido
+                    ClientsController.getInstance().notifyConfigReceived(message.imei, message.content);
                     break;
                 case "gpsDriverBehavior":
                     console.log("receive gpsDriverBehavior message,imei:" + message.imei);
